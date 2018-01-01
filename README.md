@@ -3,6 +3,9 @@
 ## Run the application
     ./gradlew bootRun
     
+## Odd behavior between getting the book individually, and getting all books
+#### When I get the specific book, the publisher and owner information is fetched along with the attributes. However, in the Get all, only the id of publisher and owner show.
+    
 ## Get a specific Book
     cURL -XGET http://localhost:8080/books/isbn/978-0743246264
 #### Output:
