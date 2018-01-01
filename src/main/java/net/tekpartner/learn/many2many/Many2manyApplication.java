@@ -2,13 +2,13 @@ package net.tekpartner.learn.many2many;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * @author Chandrashekar R. Gaajula
  */
 @SpringBootApplication
-@ComponentScan("net.tekpartner.learn.many2many")
+@EnableJpaRepositories("net.tekpartner.learn.many2many.repositories.jpa")
 public class Many2manyApplication {
 
     public static void main(String[] args) {
