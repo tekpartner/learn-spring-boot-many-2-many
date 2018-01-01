@@ -36,7 +36,7 @@ public class Owner implements Serializable {
     @Size(max = 50, message = "Size of name needs be less than or equal to 50")
     private String name;
 
-    @ManyToMany(mappedBy = "owners")
+    @ManyToMany(mappedBy = "owners", fetch = FetchType.EAGER)
     @JsonManagedReference
     private Set<Book> books = new HashSet<>();
 }

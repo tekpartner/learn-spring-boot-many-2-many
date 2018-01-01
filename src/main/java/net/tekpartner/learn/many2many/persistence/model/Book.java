@@ -39,14 +39,14 @@ public class Book implements Serializable {
     @Size(max = 14, message = "Size of isbn needs be 14 characters long")
     private String isbn;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "book_publisher",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "publisher_id", referencedColumnName = "id")})
     @JsonBackReference
     private Set<Publisher> publishers = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "book_owner",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "id")})

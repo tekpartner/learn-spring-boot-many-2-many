@@ -40,7 +40,7 @@ public class Publisher implements Serializable {
     @Size(max = 300, message = "Size of description needs be less than or equal to 300")
     private String description;
 
-    @ManyToMany(mappedBy = "publishers")
+    @ManyToMany(mappedBy = "publishers", fetch = FetchType.EAGER)
     @JsonManagedReference
     private Set<Book> books = new HashSet<>();
 }
