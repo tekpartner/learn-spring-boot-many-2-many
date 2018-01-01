@@ -5,6 +5,12 @@
     
 ## Get a specific Book
     cURL -XGET http://localhost:8080/books/isbn/978-0743246264
+#### Output:
+    {
+       "id":4,
+       "name":"Book 4",
+       "isbn":"978-0743246264"
+    }
     
 ## Get ALL Books
     cURL -XGET http://localhost:8080/books
