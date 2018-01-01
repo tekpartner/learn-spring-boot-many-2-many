@@ -8,3 +8,7 @@
     
 ## Get ALL Books
     cURL -XGET http://localhost:8080/books
+    
+## Need help in getting the dependent objects along with the book
+
+#### Getting a specific book as mentioned above only retrieves the book info and not the dependent entities of Owner & Publisher. How do you get the dependent entities?
