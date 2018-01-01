@@ -1,7 +1,7 @@
 package net.tekpartner.learn.many2many.persistence.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +36,7 @@ public class Owner implements Serializable {
     @Size(max = 50, message = "Size of name needs be less than or equal to 50")
     private String name;
 
-    @ManyToMany(mappedBy = "owners", fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @ManyToMany(mappedBy = "owners", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonBackReference
     private Set<Book> books = new HashSet<>();
 }

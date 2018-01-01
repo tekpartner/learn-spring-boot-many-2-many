@@ -1,7 +1,7 @@
 package net.tekpartner.learn.many2many.persistence.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,13 +43,14 @@ public class Book implements Serializable {
     @JoinTable(name = "book_publisher",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "publisher_id", referencedColumnName = "id")})
-    @JsonBackReference
+    @JsonManagedReference
     private Set<Publisher> publishers = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "book_owner",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "id")})
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonManagedReference
     private Set<Owner> owners = new HashSet<>();
 }
