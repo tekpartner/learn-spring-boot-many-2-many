@@ -50,7 +50,6 @@ public class Book implements Serializable {
     @JoinTable(name = "book_owner",
             joinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "id")})
-//    @JsonBackReference
     @JsonManagedReference
     private Set<Owner> owners = new HashSet<>();
 }
