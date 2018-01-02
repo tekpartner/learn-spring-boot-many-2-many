@@ -1,8 +1,6 @@
 package net.tekpartner.learn.many2many.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,9 +19,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(name = "owner")
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
 public class Owner implements Serializable {
 
     @Id
